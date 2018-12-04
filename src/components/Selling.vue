@@ -31,8 +31,8 @@ export default {
         sortable: ['selling_price'],
         headings: {
           _id: 'Selling Number',
-          brand: 'Name of sneakers',
-          series: 'Name of sneakers',
+          brand: 'Brand of sneakers',
+          series: 'Series of sneakers',
           name: 'Name of sneakers',
           size: 'Size',
           article_number: 'Style',
@@ -57,6 +57,10 @@ export default {
           this.errors.push(error)
           console.log(error)
         })
+    },
+    editSelling: function (id) {
+      this.$router.params = id
+      this.$router.push('edit')
     },
     deleteSelling: function (id) {
       this.$swal({

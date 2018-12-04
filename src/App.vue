@@ -9,8 +9,11 @@
           <b-nav-item to="/#"><i class="fa fa-home" style="padding: 5px"> Home</i></b-nav-item>
           <b-nav-item to="/selling"><i class="fa fa-list" style="padding: 5px"> Selling</i></b-nav-item>
           <b-nav-item to="/sell"><i class="fa fa-money" style="padding: 5px"> Sell</i></b-nav-item>
+          <b-nav-item><i class="fa fa-globe" style="padding: 5px"> Map</i></b-nav-item>
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto">
+          <b-nav-item to="/about"><i class="fa fa-info" style="padding: 5px"> About Us</i></b-nav-item>
+          <b-nav-item to="/contact"><i class="fa fa-comment" style="padding: 5px"> Contact Us</i></b-nav-item>
           <b-nav-item to="/login"><i class="fa fa-sign-in" style="padding: 5px"> Login </i></b-nav-item>
           <b-nav-item to="/logout"><i class="fa fa-sign-out" style="padding: 5px"> Logout </i></b-nav-item>
           <i class="fa fa-pied-piper-alt fa-1x" style="padding: 5px; color: white;"></i>
@@ -34,6 +37,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  padding-top: 20px;
+  background: url("./assets/homerbgyellow.png") repeat center top;
+}
+.VueTables__sortable {
+  cursor: pointer;
 }
 </style>
