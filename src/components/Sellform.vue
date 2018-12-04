@@ -83,7 +83,6 @@ import Vue from 'vue'
 import VueForm from 'vueform'
 import Vuelidate from 'vuelidate'
 import VueSweetalert from 'vue-sweetalert'
-import SellingService from '@/services/SellingService'
 import { required, minLength, between } from 'vuelidate/lib/validators'
 
 Vue.use(VueForm, {
@@ -101,13 +100,13 @@ export default {
   data () {
     return {
       messagetitle: ' Sell ',
-      brand: '',
-      series: 0,
-      name: 0,
-      size: 0,
-      article_number: '',
-      selling_price: 0,
-      account_name: '',
+      brand: this.brand,
+      series: this.series,
+      name: this.name,
+      size: this.size,
+      article_number: this.article_number,
+      selling_price: this.selling_price,
+      account_name: this.account_name,
       submitStatus: null
     }
   },
@@ -155,11 +154,11 @@ export default {
           }
           this.selling = selling
           console.log('Submitting in SellingForm : ' + JSON.stringify(this.selling, null, 5))
-          this.submitSelling(this.selling)
+          this.$emit('selling-is-created-updated', this.selling)
         }, 500)
       }
-    },
-    submitSelling: function (selling) {
+    }
+    /* submitSelling: function (selling) {
       console.log('submitSelling!')
       console.log('Submitting in submitSelling : ' + selling)
       SellingService.postSelling(selling)
@@ -171,18 +170,12 @@ export default {
           this.errors.push(error)
           console.log(error)
         })
-    }
+    } */
   }
 }
 
 </script>
-style scoped>
-.vue-title {
-margin-top: 30px;
-text-align: center;
-font-size: 45pt;
-margin-bottom: 10px;
-}
+<style scoped>
 #app1 {
 width: 95%;
 margin: 0 auto;
@@ -240,6 +233,5 @@ color: whitesmoke;
 .error:focus {
 outline-color: #ffa519;
 }
-<style scoped>
 
 </style>
