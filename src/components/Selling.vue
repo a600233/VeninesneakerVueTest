@@ -97,16 +97,16 @@ export default {
   }
 }
 </script>
-#app1 {
-width: 60%;
-margin: 0 auto;
-}
-.vue-title {
-margin-top: 30px;
-text-align: center;
-font-size: 45pt;
-margin-bottom: 10px;
-}
-<style scoped>
 
+<style scoped>
+  #app1 {
+    width: 60%;
+    margin: 0 auto;
+  }
+  .vue-title {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 45pt;
+    margin-bottom: 10px;
+  }
 </style>

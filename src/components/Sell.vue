@@ -52,8 +52,9 @@ export default {
 
 <style scoped>
   #app1 {
-    width: 95%;
+    width: 100%;
     margin: 0 auto;
+    height: 100%;
   }
   .vue-title {
     margin-top: 30px;

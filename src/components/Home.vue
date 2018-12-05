@@ -11,13 +11,13 @@
           <p>the Donation page and empty your wallet</p>
         </td>
         <td>
-          <img src="../assets/homer.gif" alt="description here" />
+          <img src="../assets/NIKE.gif" alt="description here" />
         </td>
       </tr>
     </table>
 
     <p></p>
-    <p class="lead">This is the homepage of your <b>MEVN</b> Web app</p>
+    <p class="lead">Follow Our <b>INS</b> With jokershady</p>
   </div>
 </template>
 
@@ -34,9 +34,9 @@
     font-size: 2.5rem;
   }
   #app1 {
-    width: 60%;
-    margin: 0 auto;
-  }
+       width: 60%;
+       margin: 0 auto;
+     }
   .vue-title {
     font-size: 70pt;
     margin-bottom: 10px;
