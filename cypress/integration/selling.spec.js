@@ -43,5 +43,10 @@ describe('Manage Selling page', () => {
     // Click + symbol of 2nd selling in list
     cy.get('tbody').find('tr').should('have.length', 6)
     cy.get('tbody').find('tr:nth-child(4)').find('td:nth-child(11)').click()
+    cy.url().should('include', '/edit')
+    cy.get('.error').should('not.exist')
+    cy.get('input[data-test=price]').type(0)
+    cy.get('button[type=submit]').click()
+    cy.contains('Selling is on the page!').should('exist')
   })
 })
