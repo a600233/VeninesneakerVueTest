@@ -3,7 +3,7 @@
     <h3 class="vue-title"><i class="fa fa-list" style="padding: 3px"></i>{{messagetitle}}</h3>
     <div id="app1">
       <v-client-table :columns="columns" :data="selling" :options="options">
-        <a slot="upamount" slot-scope="props" class="fa fa-thumbs-up fa-2x" @click="upamountSelling(props.row._id)"></a>
+        <a slot="upamount" slot-scope="props" class="fa fa-plus fa-2x" @click="upamountSelling(props.row._id)"></a>
         <a slot="remove" slot-scope="props" class="fa fa-trash-o fa-2x" @click="deleteSelling(props.row._id)"></a>
         <a slot="edit" slot-scope="props" class="fa fa-edit fa-2x" @click="editSelling(props.row._id)"></a>
       </v-client-table>
