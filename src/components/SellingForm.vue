@@ -60,18 +60,18 @@
     <div class="error" v-if="!$v.article_number.minLength">Art.no must have at least {{$v.article_number.$params.minLength.min}} letters.</div>
     <div class="form-group" :class="{ 'form-group--error': $v.selling_price.$error }">
       <label class="form-control-label" name="selling_price">Price</label>
-      <input class="form__input" type="number" v-model.trim="selling_price"/>
+      <input data-test="price" class="form__input" type="number" v-model.trim="selling_price"/>
     </div>
     <div class="error" v-if="!$v.selling_price.between">Please Input Right Price</div>
     <div class="form-group" :class="{ 'form-group--error': $v.account_name.$error }">
       <label class="form__label">Seller's Name</label>
       <input class="form__input" v-model.trim="$v.account_name.$model"/>
     </div>
-    <div class="error" v-if="!$v.account_name.required">Name is Required!</div>
+    <div class="error" v-if="!$v.account_name.required">Seller's Name is Required!</div>
     <div class="error" v-if="!$v.account_name.minLength">Name must have at least {{$v.account_name.$params.minLength.min}} letters.</div>
     <div class="form-group" :class="{ 'form-group--error': $v.selling_amount.$error }">
       <label class="form-control-label" name="selling_amount">Amount</label>
-      <input class="form__input" type="number" v-model.trim="selling_amount"/>
+      <input data-test="amount" class="form__input" type="number" v-model.trim="selling_amount"/>
     </div>
     <div class="error" v-if="!$v.selling_amount.between">Please Input Right Amount</div>
     <p>

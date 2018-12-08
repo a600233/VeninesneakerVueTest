@@ -22,13 +22,13 @@ export default {
   data () {
     return {
       selling: { brand: '',
-        series: 0,
-        name: 0,
-        size: 0,
+        series: '',
+        name: '',
+        size: '',
         article_number: '',
-        selling_price: 0,
+        selling_price: '',
         account_name: '',
-        selling_amount: 1
+        selling_amount: ''
       },
       messagetitle: ' Make Selling '
     }

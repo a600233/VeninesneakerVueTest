@@ -39,4 +39,9 @@ describe('Manage Selling page', () => {
     cy.get('tbody').find('tr:nth-child(5)').find('td:nth-child(10)').click()
     cy.get('tbody').find('tr:nth-child(5)').find('td:nth-child(9)').should('contain', 2)
   })
+  it('allows a set of selling info to be edited', () => {
+    // Click + symbol of 2nd selling in list
+    cy.get('tbody').find('tr').should('have.length', 6)
+    cy.get('tbody').find('tr:nth-child(4)').find('td:nth-child(11)').click()
+  })
 })
