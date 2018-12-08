@@ -3,6 +3,7 @@
     <h3 class="vue-title"><i class="fa fa-list" style="padding: 3px"></i>{{messagetitle}}</h3>
     <div id="app1">
       <v-client-table :columns="columns" :data="selling" :options="options">
+        <a slot="upamount" slot-scope="props" class="fa fa-thumbs-up fa-2x" @click="upamountSelling(props.row._id)"></a>
         <a slot="remove" slot-scope="props" class="fa fa-trash-o fa-2x" @click="deleteSelling(props.row._id)"></a>
         <a slot="edit" slot-scope="props" class="fa fa-edit fa-2x" @click="editSelling(props.row._id)"></a>
       </v-client-table>
@@ -23,21 +24,23 @@ export default {
       messagetitle: 'Selling List',
       selling: [],
       props: ['_id'],
+      message: {},
       errors: [],
-      columns: ['_id', 'brand', 'series', 'name', 'size', 'article_number', 'selling_price', 'account_name', 'edit', 'remove'],
+      columns: ['_id', 'brand', 'series', 'name', 'size', 'article_number', 'selling_price', 'account_name', 'selling_amount', 'upamount', 'edit', 'remove'],
       options: {
         perPage: 9,
-        filterable: ['brand', 'series', 'name'],
+        filterable: ['brand', 'series', 'name', 'selling_amount'],
         sortable: ['selling_price'],
         headings: {
           _id: 'Selling Number',
-          brand: 'Brand of sneakers',
-          series: 'Series of sneakers',
-          name: 'Name of sneakers',
+          brand: 'Brand',
+          series: 'Series',
+          name: 'Name',
           size: 'Size',
           article_number: 'Style',
           selling_price: 'Price',
-          account_name: 'Seller'
+          account_name: 'Seller',
+          selling_amount: 'Amount'
         }
       }
     }
@@ -58,6 +61,18 @@ export default {
           console.log(error)
         })
     },
+    upamountSelling: function (id) {
+      SellingService.upamountSelling(id)
+        .then(response => {
+          // JSON responses are automatically parsed.
+          this.loadSelling()
+          console.log(response)
+        })
+        .catch(error => {
+          this.errors.push(error)
+          console.log(error)
+        })
+    },
     editSelling: function (id) {
       this.$router.params = id
       this.$router.push('edit')
@@ -70,19 +85,17 @@ export default {
         showCancelButton: true,
         confirmButtonText: 'OK Delete it',
         cancelButtonText: 'Cancel',
-        showCloseButton: true,
-        showLoaderOnConfirm: true
+        showCloseButton: true
+        // showLoaderOnConfirm: true
       }).then((result) => {
         console.log('SWAL Result : ' + result)
-        if (result.value === true) {
+        if (result === true) {
           SellingService.deleteSelling(id)
             .then(response => {
-              // JSON responses are automatically parsed.
               this.message = response.data
               console.log(this.message)
               this.loadSelling()
-              // Vue.nextTick(() => this.$refs.vuetable.refresh())
-              this.$swal('Deleted', 'You successfully deleted this set of Selling Info ' + JSON.stringify(response.data, null, 5), 'success')
+              this.$swal('Deleted', 'You successfully deleted this Donation ' + JSON.stringify(response.data, null, 5), 'success')
             })
             .catch(error => {
               this.$swal('ERROR', 'Something went wrong trying to Delete ' + error, 'error')
@@ -90,17 +103,19 @@ export default {
               console.log(error)
             })
         } else {
-          this.$swal('Cancelled', 'Your Selling Info Still Counts!', 'info')
+          console.log(' SWAL Else Result: ' + result.value)
+          this.$swal('Cancelled', 'Your Donation still Counts!', 'info')
         }
       })
     }
   }
 }
+
 </script>
 
 <style scoped>
   #app1 {
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
   }
   .vue-title {

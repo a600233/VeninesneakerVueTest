@@ -27,7 +27,9 @@ export default {
         size: 0,
         article_number: '',
         selling_price: 0,
-        account_name: ''},
+        account_name: '',
+        selling_amount: 1
+      },
       messagetitle: ' Make Selling '
     }
   },

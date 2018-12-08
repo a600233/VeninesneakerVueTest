@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     getSelling: function () {
-      SellingService.fetchSelling(this.$router.params)
+      SellingService.fetchSellings(this.$router.params)
         .then(response => {
           this.temp = response.data
           this.selling = this.temp[0]

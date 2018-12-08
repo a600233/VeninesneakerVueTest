@@ -69,8 +69,13 @@
     </div>
     <div class="error" v-if="!$v.account_name.required">Name is Required!</div>
     <div class="error" v-if="!$v.account_name.minLength">Name must have at least {{$v.account_name.$params.minLength.min}} letters.</div>
+    <div class="form-group" :class="{ 'form-group--error': $v.selling_amount.$error }">
+      <label class="form-control-label" name="selling_amount">Amount</label>
+      <input class="form__input" type="number" v-model.trim="selling_amount"/>
+    </div>
+    <div class="error" v-if="!$v.selling_amount.between">Please Input Right Amount</div>
     <p>
-      <button class="btn btn-primary btn1" type="submit" :disabled="submitStatus === 'PENDING'">Make Selling</button>
+      <button class="btn btn-primary btn1" type="submit" :disabled="submitStatus === 'PENDING'">{{sellingBtnTitle}}</button>
     </p>
     <p class="typo__p" v-if="submitStatus === 'OK'">Selling is on the page!</p>
     <p class="typo__p" v-if="submitStatus === 'ERROR'">Please Fill in the Form Correctly.</p>
@@ -100,13 +105,14 @@ export default {
   data () {
     return {
       messagetitle: ' Sell ',
-      brand: this.brand,
-      series: this.series,
-      name: this.name,
-      size: this.size,
-      article_number: this.article_number,
-      selling_price: this.selling_price,
-      account_name: this.account_name,
+      brand: this.selling.brand,
+      series: this.selling.series,
+      name: this.selling.name,
+      size: this.selling.size,
+      article_number: this.selling.article_number,
+      selling_price: this.selling.selling_price,
+      account_name: this.selling.account_name,
+      selling_amount: this.selling.selling_amount,
       submitStatus: null
     }
   },
@@ -130,6 +136,10 @@ export default {
     account_name: {
       required,
       minLength: minLength(6)
+    },
+    selling_amount: {
+      required,
+      between: between(1, 10)
     }
   },
   methods: {
@@ -142,7 +152,7 @@ export default {
         // do your submit logic here
         this.submitStatus = 'PENDING'
         setTimeout(() => {
-          this.submitStatus = 'FINISHED'
+          this.submitStatus = 'OK'
           var selling = {
             brand: this.brand,
             series: this.series,
@@ -150,7 +160,8 @@ export default {
             size: this.size,
             article_number: this.article_number,
             selling_price: this.selling_price,
-            account_name: this.account_name
+            account_name: this.account_name,
+            selling_amount: this.selling_amount
           }
           this.selling = selling
           console.log('Submitting in SellingForm : ' + JSON.stringify(this.selling, null, 5))

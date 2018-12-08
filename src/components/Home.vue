@@ -5,10 +5,10 @@
     <table align="center">
       <tr>
         <td>
-          <p class="lead"><b><i>Time for a change !!</i></b>
-          <p>Out with Boring Prumt - Giving has never been so easy.</p>
+          <p class="lead"><b><i>Sneakers Will Be Like Venom!!</i></b>
+          <p>ARE YOU SEARCHING FOR NIKE, YEZZY, CONVERSE or just PUMA?</p>
           <p>Just click <a href ="/selling">here</a> to go to</p>
-          <p>the Donation page and empty your wallet</p>
+          <p>the Selling list page and Find your </p>
         </td>
         <td>
           <img src="../assets/NIKE.gif" alt="description here" />
