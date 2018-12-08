@@ -22,7 +22,7 @@ export default {
   name: 'Map',
   data () {
     return {
-      donations: [],
+      selling: [],
       messagetitle: ' Selling Map '
     }
   },
