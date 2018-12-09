@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Sign in</h1>
+    <h1 class="Vue-title">Sign in</h1>
     <br>
     <div id="firebaseui-auth-container"></div>
   </div>
