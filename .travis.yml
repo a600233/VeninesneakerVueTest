@@ -4,7 +4,7 @@ node_js:
   - '8'
 before_script:
 - npm install -g httpserver
-- npm run build
+- npm run custom-build
 - cd dist && httpserver -p 8080 &
 script:
 - npx cypress run
