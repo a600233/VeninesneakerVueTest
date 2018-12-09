@@ -117,6 +117,7 @@ export default {
   #app1 {
     width: 80%;
     margin: 0 auto;
+    height: 100%;
   }
   .vue-title {
     margin-top: 30px;

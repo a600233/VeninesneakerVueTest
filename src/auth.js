@@ -2,7 +2,7 @@ import firebase from 'firebase'
 import firebaseui from 'firebaseui'
 
 const config = {
-  apiKey: 'AIzaSyC8UermYswvaDWc88Rdya1dsuBJE0H0MRU',
+  apiKey: 'AIzaSyAkFuc3Dh1uvU7Tv8bNijF51mPFS5cNzUk',
   authDomain: 'veninesneaker.firebaseapp.com',
   databaseURL: 'https://veninesneaker.firebaseio.com',
   projectId: 'veninesneaker',
