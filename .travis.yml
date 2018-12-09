@@ -1,4 +1,10 @@
-    dist: trusty
-    language: node_js
-    node_js:
-    - stable
+dist: trusty
+language: node_js
+node_js:
+  - '8'
+before_script:
+- npm install -g httpserver
+- npm run build
+- cd dist && httpserver -p 8080 &
+script:
+- npx cypress run
