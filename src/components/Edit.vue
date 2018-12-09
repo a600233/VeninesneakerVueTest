@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import SellingService from '@/services/SellingService'
+import SellingService from '@/services/sellingservice'
 import SellingForm from '@/components/SellingForm'
 
 export default {

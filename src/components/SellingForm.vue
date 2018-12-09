@@ -169,19 +169,6 @@ export default {
         }, 500)
       }
     }
-    /* submitSelling: function (selling) {
-      console.log('submitSelling!')
-      console.log('Submitting in submitSelling : ' + selling)
-      SellingService.postSelling(selling)
-        .then(response => {
-          // JSON responses are automatically parsed.
-          console.log(response)
-        })
-        .catch(error => {
-          this.errors.push(error)
-          console.log(error)
-        })
-    } */
   }
 }
 

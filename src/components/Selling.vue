@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import SellingService from '@/services/SellingService'
+import SellingService from '@/services/sellingservice'
 import Vue from 'vue'
 import VueTables from 'vue-tables-2'
 
