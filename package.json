@@ -12,7 +12,7 @@
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
     "build": "node build/build.js",
-    "custom-build":"npx webpack --config build/webpack.custom.prod.config.js"
+    "custom-build": "npx webpack --config build/webpack.custom.prod.config.js"
   },
   "dependencies": {
     "axios": "^0.18.0",

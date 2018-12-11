@@ -1,7 +1,5 @@
 # Assignment 2 - Vue app - Automated development process.
 
-<br>
-
 ## Name: Wujiuge Yin  ##
 ## Student No.: 2008225 ##
 <br>
@@ -27,6 +25,11 @@
 
 ## Automated Deployment.
 ### [Auto-deployed of My Vue app](http://venine.surge.sh/)
+<br>
+
+## Github
+
+### [My Github Link for Vue Client](https://github.com/a600233/VeninesneakerVueTest)
 <br>
 
 ## Extra features.
