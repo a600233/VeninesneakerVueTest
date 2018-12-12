@@ -4,7 +4,7 @@ describe('Home', () => {
   })
 
   it('Shows a header', () => {
-    cy.get('.vue-title').should('contain', 'Sneakers Platform With Attitudes')
+    cy.get('.vue-title').should('contain', 'Sneakers APP With Attitudes')
     cy.get('.lead').should('contain', 'Sneakers Will Be Like Venom!!')
   })
 

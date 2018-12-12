@@ -1,6 +1,6 @@
 <template>
   <div class="hero">
-    <h1 class="vue-title">Sneakers Platform With Attitudes</h1>
+    <h1 class="vue-title">Sneakers APP With Attitudes</h1>
 
     <table align="center">
       <tr>
